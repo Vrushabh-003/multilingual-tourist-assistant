@@ -1,48 +1,129 @@
-# Multilingual Tourist Assistant
+# Multilingual Tourist Assistant 🗺️
 
-## Description
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-red?style=for-the-badge&logo=streamlit)](https://streamlit.io)
 
-A user-friendly, interactive web application built with Streamlit to help tourists plan their trips. The application is fully multilingual, supporting both English and Hindi. It allows users to input their travel preferences and receive mock recommendations for attractions, food, and more.
+An intelligent, interactive web application built with Streamlit that serves as a personal travel planner. This assistant leverages the power of generative AI to create personalized itineraries and provides real-time information to help users plan their perfect trip.
+
+---
 
 ## ✨ Features
 
-- **🌐 Multilingual Support**: Instantly switch between English and Hindi interfaces.
-- **📝 Trip Planning Form**: A comprehensive form to capture travel details like destination, dates, budget, and interests.
-- **💡 Personalized Recommendations**: Generates a mock travel plan based on user input (cached for efficiency).
-- **🆘 Emergency Information**: Provides a quick-access tab with essential emergency contacts and useful phrases in the selected language.
-- ** modular and Clean Code**: The project is structured into separate files for logic, configuration, and translations for better maintainability.
-- **State Management**: Uses Streamlit's `st.session_state` to persist user language preference and form data across reruns and tabs.
+- **🌐 Multilingual Support**: A fully functional interface that seamlessly switches between **English** and **Hindi**.
+- **🤖 AI-Powered Itineraries**: Utilizes **Google's Gemini AI** to generate unique, personalized travel plans based on user inputs.
+- **🎯 Personalization**: Recommendations are tailored to the user's destination, budget (in INR), number of travelers, and specific interests (e.g., History, Food, Adventure).
+- **🌦️ Real-Time Weather**: Integrates with **WeatherAPI.com** to provide live weather forecasts for the selected travel date.
+- **🆘 Emergency Hub**: A dedicated tab with essential, localized emergency contact numbers and useful phrases.
+- **🔐 Secure API Management**: Follows best practices by using Streamlit's secrets management to keep API keys safe and secure.
 
-## 🛠️ Setup and Installation
+---
 
-Follow these steps to set up the project on your local machine.
+## 🚀 Live Demo
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your-repo-url>
-    cd tourist_assistant
-    ```
+## **[➡️ View Live Demo](https://tourist-assistant.streamlit.app/)** \*
 
-2.  **Create and activate a virtual environment:**
-    * **Windows:**
-        ```bash
-        python -m venv venv
-        .\venv\Scripts\activate
-        ```
-    * **macOS / Linux:**
-        ```bash
-        python3 -m venv venv
-        source venv/bin/activate
-        ```
+## 🛠️ Tech Stack
 
-3.  **Install the required dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+- **Framework**: Streamlit
+- **Language**: Python
+- **APIs**:
+  - Google Generative AI (Gemini) for recommendations
+  - WeatherAPI.com for weather forecasts
 
-## 🚀 How to Run
+---
 
-Once the setup is complete, you can run the Streamlit application with the following command:
+## ⚙️ Setup and Installation
+
+Follow these steps to set up and run the project on your local machine.
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/your-username/multilingual-tourist-assistant.git
+
+cd multilingual-tourist-assistant
+
+```
+
+### 2. Create and Activate a Virtual Environment
+
+A virtual environment is recommended to keep dependencies isolated.
+
+### Windows:
+
+```
+python -m venv venv
+
+.\venv\Scripts\activate
+```
+
+### macOS / Linux:
+
+```
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+
+### 🔑 API Key Configuration
+
+This application requires two API keys to function.
+
+### 1. WeatherAPI.com Key
+
+```
+1. Go to WeatherAPI.com and create a free account.
+
+2. Copy your API key from the dashboard.
+```
+
+### 2. Google AI (Gemini) Key
+
+```
+1. Go to Google AI Studio.
+
+2. Sign in and click "Get API key" to generate your free key.
+```
+
+### Create a Secrets File
+
+You must store these keys in a secrets.toml file.
+
+1. Create a folder named `.streamlit` in the root of your project directory.
+2. Inside `.streamlit`, create a file named `secrets.toml`.
+3. Add your keys to this file in the following format:
+
+```
+# .streamlit/secrets.toml
+
+WEATHERAPI_KEY = "your_key_from_weatherapi.com"
+
+GOOGLE_API_KEY = "your_key_from_google_ai_studio"
+```
+
+The project's `.gitignore` file is configured to ignore this file, ensuring your keys are never committed to the repository.
+
+### ▶️ How to Run
+
+Once you have completed the setup and configuration, run the application with this command:
+
+```
 streamlit run app.py
+```
+
+The application will open in a new tab in your web browser.
+
+### ☁️ Deployment
+
+This application is designed to be deployed on Streamlit Community Cloud.
+
+1. Push your code to a public GitHub repository (your `secrets.toml` will be ignored by Git).
+2. Connect your GitHub account to Streamlit Community Cloud.
+3. Select your repository and deploy.
+4. Add your secrets (the contents of your local `secrets.toml` file) directly into the Streamlit deployment dashboard's secrets manager.
