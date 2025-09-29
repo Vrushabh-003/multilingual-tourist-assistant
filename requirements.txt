@@ -1,0 +1,13 @@
+# # tourist_assistant/requirements.txt
+
+# streamlit
+# pandas
+# wikipedia-api
+# transformers
+# torch
+# sentencepiece
+
+streamlit
+pandas
+requests
+google-generativeai
