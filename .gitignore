@@ -8,3 +8,6 @@ __pycache__/
 
 # Ignore Streamlit's config file (if you have one)
 .streamlit/config.toml
+
+# Ignore the secrets file to keep API keys private
+.streamlit/secrets.toml
